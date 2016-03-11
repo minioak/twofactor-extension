@@ -1,0 +1,32 @@
+{% extends "theme::layouts/login" %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-9 col-md-10 col-md-offset-7 col-sm-10 col-sm-offset-7">
+
+                <div class="logo">
+                    {{ img('theme::img/logo-white.png').height(55)|raw }}
+                </div>
+
+                {% include "theme::partials/messages" %}
+
+                {{ form_open({'method': 'post', 'url': 'validate/twofa'}) }}
+
+                <div class="form-group credentials">
+                    {{ form_text("twofa", null, {'class': 'form-control', 'placeholder': 'Enter Code'}) }}{{ icon('lock') }}
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" value="Login" class="btn btn-success btn-block">
+                        {{ trans('anomaly.module.users::button.login') }}
+                    </button>
+                </div>
+                
+                {{ form_close() }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

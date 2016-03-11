@@ -1,0 +1,12 @@
+{
+    "name": "minioak/twofactor-extension",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Minioak\\TwofactorExtension\\": "src/"
+        }
+    },
+    "require": {
+        "pragmarx/google2fa": "^0.7.1"
+    }
+}
